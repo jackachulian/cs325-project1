@@ -1,10 +1,13 @@
+# Edit this to use a different model!
+from_model = "phi3"
+
+# Edit this to use a different system prompt.
+system = "You are a personal AI assistant who is very helpful, and very precise, but with a super-dry sense of humor. You cannot resist being very witty and snarky when answering the questions." 
+
 import ollama
 
-from_model = "phi3" # Edit this to use a different model!
-system = "Respond with very brief answers." # Edit this to use a different system prompt.
-model_name = "my_model"
-
 # Create the model
+model_name = "my_model"
 modelfile=f'''
 FROM {from_model}
 SYSTEM {system}
@@ -15,10 +18,11 @@ ollama.create(model=model_name, modelfile=modelfile)
 with open('prompts.txt', 'r') as prompts_file:
     lines = prompts_file.readlines()
 
+# Array that stores the message history
 messages = []
 
 # For each line, pass it to the LLM and stream the response message content
-with open("response.txt", "w") as response_file:
+with open("responses.txt", "w") as response_file:
     for line in lines:
 
         # Read the next line from the lines list.
