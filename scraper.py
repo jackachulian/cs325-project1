@@ -7,8 +7,8 @@ game_ids_to_scrape = [
     "2864390", #Mana Cycle
     "413150", #Stardew Valley
     "1145360", #Hades
-    "2357570", #Overwatch 2
     "2344520", #Diablo 4
+    "1623730"  #"Palworld"
 ]
 
 def get_steam_reviews(game_reviews_url):
@@ -26,6 +26,7 @@ def get_steam_reviews(game_reviews_url):
     # Parse the page with BeautifulSoup
     soup = BeautifulSoup(response.text, 'html.parser')
 
+    # Grab the app name which will be used for the file name instead of the id if a name is found
     app_name_div = soup.find(class_="apphub_AppName")
     app_name = app_name_div.get_text(strip=True) if app_name_div else game_id
     
