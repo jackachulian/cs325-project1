@@ -1,0 +1,10 @@
+Positive
+Positive.
+Positive
+Positive
+Neutral  The instruction asks for a sentiment classification of the given text snippet but without further context it's difficult to establish an emotional tone towards growing vegetables. Hence my judgement is Neutral as this statement seems informative rather than expressive of personal feelings or opinions about the action described.
+Positive
+Positive
+Negative
+Positive
+Positive

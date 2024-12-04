@@ -15,7 +15,7 @@ def find_first_sentiment(text: str):
     for word in words:
         if word.lower() in sentiment_words:
             return word.lower()  # Return the first matching word
-    return None  # Return None if no keywords are found
+    return "???"  # Return ??? if no keywords are found
 
 # Directory containing text files
 directory_path = './sentiments'

@@ -5,7 +5,7 @@ import ollama
 from_model = "phi3"
 
 # Edit this to use a different system prompt.
-system = "You are a sentiment reviewer that can only output the words: Positive, Negative or Neutral. You should only output this one word without any extra explanation. Remember that many steam reviews are sarcastic/joking, so positive reviews might actually be negative reviews and vice versa." 
+system = "Only reply witha  single word based on teh sentiment of any comment given to you: Positive, Negative or Neutral." 
 
 # Create the model
 model_name = "my_model"
@@ -22,7 +22,7 @@ def respond_to_reviews(filename, sentiment_filename):
         lines = prompts_file.readlines()
 
     # For each line, pass it to the LLM and stream the response message content
-    with open(sentiment_filename, "w") as response_file:
+    with open(sentiment_filename, "w", errors="ignore") as response_file:
         for line in lines:
 
             # Read the next line from the lines list.
